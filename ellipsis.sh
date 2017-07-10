@@ -7,13 +7,14 @@ pkg.link() {
   keybase decrypt -i tanwww.toml.encrypted -o tanwww.toml
   fs.link_file microtan.toml ~/.config/mina/microtan.toml
   fs.link_file tanwww.toml ~/.config/mina/tanwww.toml
+  fs.link_file dnsmasq.conf /usr/local/etc/dnsmasq.conf
 }
 
 pkg.install() {
   mkdir -p ~/Gyehoeg/work
   mkdir -p ~/.config/mina
 
-  brew install terraform
+  brew install terraform dnsmasq
   install_app docker
   install_app postico
   yarn global add @topagentnetwork/tf-output @topagentnetwork/cloudwatch-logs-souji

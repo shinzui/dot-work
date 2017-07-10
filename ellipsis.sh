@@ -2,9 +2,16 @@
 #
 # shinzui/work ellipsis package
 
-# The following hooks can be defined to customize behavior of your package:
+pkg.link() {
+  keybase decrypt -i microtan.toml.encrypted -o microtan.toml
+  keybase decrypt -i tanwww.toml.encrypted -o tanwww.toml
+  fs.link_file microtan.toml ~/.config/mina/microtan.toml
+  fs.link_file tanwww.toml ~/.config/mina/tanwww.toml
+}
+
 pkg.install() {
   mkdir -p ~/Gyehoeg/work
+  mkdir -p ~/.config/mina
 
   brew install terraform
   install_app docker

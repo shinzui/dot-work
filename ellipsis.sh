@@ -19,6 +19,8 @@ pkg.install() {
   install_app postico
   yarn global add @topagentnetwork/tf-output @topagentnetwork/cloudwatch-logs-souji
   yarn global add pino pino-colada plop
+  sudo easy_install pip
+  pip install --user tmuxp
 }
 
 install_app() {

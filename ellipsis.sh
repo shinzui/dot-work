@@ -14,7 +14,7 @@ pkg.install() {
   mkdir -p ~/Gyehoeg/work
   mkdir -p ~/.config/mina
 
-  brew install terraform dnsmasq
+  brew install terraform dnsmasq awscli
   install_app docker
   install_app postico
   yarn global add @topagentnetwork/tf-output @topagentnetwork/cloudwatch-logs-souji

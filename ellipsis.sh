@@ -14,13 +14,17 @@ pkg.install() {
   mkdir -p ~/Gyehoeg/work
   mkdir -p ~/.config/mina
 
-  brew install terraform dnsmasq awscli
+  brew install terraform dnsmasq awscli go
   install_app docker
   install_app postico
   yarn global add @topagentnetwork/tf-output @topagentnetwork/cloudwatch-logs-souji
   yarn global add pino pino-colada plop
   sudo easy_install pip
   pip install --user tmuxp
+  sudo mkdir -p /etc/resolver
+  sudo tee /etc/resolver/dev >/dev/null <<EOF
+  nameserver 127.0.0.1
+EOF
 }
 
 install_app() {
